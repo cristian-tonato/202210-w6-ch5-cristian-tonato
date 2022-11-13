@@ -1,5 +1,4 @@
-
-import { AppRoutes } from "../components/routes/app.rputes";
+import { AppRoutes } from "../components/routes/app.routes";
 import { Layout } from "../layout/layout";
 
 function App() {

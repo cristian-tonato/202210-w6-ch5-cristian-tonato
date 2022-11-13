@@ -3,7 +3,7 @@ import styles from "./menu.module.css";
 
 export function Menu() {
     const options = [
-        { id: "1", path: "home", label: "home" },
+        { id: "1", path: "Ofertas", label: "Ofertas" },
         { id: "2", path: "Games", label: "Games" },
         { id: "3", path: "Comics", label: "Comics" },
     ];
