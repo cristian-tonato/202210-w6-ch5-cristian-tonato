@@ -2,16 +2,15 @@ import { Articules } from "./../models/articules";
 import { ArticulesReducer } from "./reducer";
 import { actionTypes } from "./action.types";
 
-describe("Given the function taskReducer", () => {
+describe("Given the function articulesReducer", () => {
     describe("Given the function ArticulesReducer", () => {
         const shopArticules: Articules = {
-            
-            "id": 1,
-            "name": "God of War: Ragnarok",
-            "platform": "PS5",
-            "price": 79.99,
-            "ofert": false,
-            "imgUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png"
+            id: 1,
+            name: "God of War: Ragnarok",
+            platform: "PS5",
+            price: "79.99",
+            ofert: false,
+            imgUrl: "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png",
         };
 
         let action: { type: string; payload: unknown };
@@ -49,7 +48,7 @@ describe("Given the function taskReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.update,
-                    payload: { ...shopArticules, title: "Update task" },
+                    payload: { ...shopArticules, title: "Update articules" },
                 };
                 state = [shopArticules];
             });
@@ -63,7 +62,11 @@ describe("Given the function taskReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.update,
-                    payload: { ...shopArticules, id: "2", title: "Update task" },
+                    payload: {
+                        ...shopArticules,
+                        id: "2",
+                        title: "Update articules",
+                    },
                 };
                 state = [shopArticules];
             });
@@ -95,21 +98,7 @@ describe("Given the function taskReducer", () => {
                 };
                 state = [shopArticules];
             });
-            test("Then the returned state should should be the original state", () => {
-                const result = ArticulesReducer(state, action);
-                expect(result).toEqual(state);
-            });
-        });
-
-        describe("When the action is any other", () => {
-            beforeEach(() => {
-                action = {
-                    type: "",
-                    payload: null,
-                };
-                state = [shopArticules];
-            });
-            test("Then the returned state should be ...", () => {
+            test("Then the returned state should be the original state", () => {
                 const result = ArticulesReducer(state, action);
                 expect(result).toEqual(state);
             });
