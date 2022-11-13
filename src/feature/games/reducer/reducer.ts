@@ -1,10 +1,10 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { Articules } from "../models/articules";
+import { Games } from "../models/games";
 import * as ac from "./action.creator";
 
-const initialState: Array<Articules> = [];
+const initialState: Array<Games> = [];
 
-export const ArticulesReducer = createReducer(initialState, (builder) => {
+export const GamesReducer = createReducer(initialState, (builder) => {
     builder.addCase(ac.loadActionCreator, (_state, action) => action.payload);
     builder.addCase(ac.addActionCreator, (state, action) => [
         ...state,
