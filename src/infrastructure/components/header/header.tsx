@@ -1,9 +1,12 @@
+import { Menu } from "../menu/menu";
+import styles from "./header.module.css";
 export function Header() {
     const title = "COMICSON";
     return (
         <>
-            <header>
+            <header className={styles.header}>
                 <h1>{title} </h1>
+                <Menu></Menu>
             </header>
         </>
     );

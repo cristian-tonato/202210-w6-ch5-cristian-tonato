@@ -2,8 +2,9 @@ import { Articules } from "./../../feature/models/articules";
 
 export class ShopArticules {
     url: string;
-    constructor(url = "https://202210-w6-backend-production.up.railway.app/") {
+    constructor(url = "https://comicson.onrender.com/Games") {
         this.url = url;
+        
     }
 
     createError(response: Response) {

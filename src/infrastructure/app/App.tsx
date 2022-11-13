@@ -1,9 +1,15 @@
 import { Header } from "../components/header/header";
+import { AppRoutes } from "../components/routes/app.rputes";
+import { Layout } from "../layout/layout";
 
 function App() {
     return (
         <>
-            <Header></Header>
+            <div className="App">
+                <Layout>
+                    <AppRoutes></AppRoutes>
+                </Layout>
+            </div>
         </>
     );
 }
