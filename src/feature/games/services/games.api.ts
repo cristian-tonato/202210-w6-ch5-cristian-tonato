@@ -1,10 +1,9 @@
-import { Articules } from "./../../feature/models/articules";
+import { Games } from "..//models/games";
 
-export class ShopArticules {
+export class ShopGames {
     url: string;
     constructor(url = "https://comicson.onrender.com/Games") {
         this.url = url;
-        
     }
 
     createError(response: Response) {
@@ -22,7 +21,7 @@ export class ShopArticules {
     }
 
     // create / post
-    create(shopItem: Articules) {
+    create(shopItem: Games) {
         return fetch(this.url, {
             method: "POST",
             body: JSON.stringify(shopItem),
@@ -36,7 +35,7 @@ export class ShopArticules {
     }
 
     // delete
-    delete(shopItem: Articules) {
+    delete(shopItem: Games) {
         return fetch(`${this.url}/${shopItem.id}`, {
             method: "DELETE",
         }).then((response) => {

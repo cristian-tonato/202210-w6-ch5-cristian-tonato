@@ -1,14 +1,14 @@
-import { ShopArticules } from "../../infrastructure/services/articule.api";
-import { Articules } from "../models/articules";
+import { ShopGames } from "../services/games.api";
+import { Games } from "../models/games";
 import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { rootState } from "../../infrastructure/store/store";
+import { rootState } from "../../../infrastructure/store/store";
 import * as ac from "../reducer/action.creator";
 
-export const useShopArticules = () => {
-    const shopItems = useSelector((state: rootState) => state.articules);
+export const useShopGames = () => {
+    const shopItems = useSelector((state: rootState) => state.games);
     const dispatcher = useDispatch();
-    const apiShop = useMemo(() => new ShopArticules(), []);
+    const apiShop = useMemo(() => new ShopGames(), []);
 
     useEffect(() => {
         apiShop
@@ -16,13 +16,13 @@ export const useShopArticules = () => {
             .then((shopItems) => dispatcher(ac.loadActionCreator(shopItems)));
     }, [apiShop, dispatcher]);
 
-    const handleAdd = (newShopItem: Articules) => {
+    const handleAdd = (newShopItem: Games) => {
         apiShop
             .create(newShopItem)
-            .then((item: Articules) => dispatcher(ac.addActionCreator(item)));
+            .then((item: Games) => dispatcher(ac.addActionCreator(item)));
     };
 
-    const handleDelete = (shopItem: Articules) => {
+    const handleDelete = (shopItem: Games) => {
         apiShop
             .delete(shopItem)
             .then(() => dispatcher(ac.deleteActionCreator(shopItem)));

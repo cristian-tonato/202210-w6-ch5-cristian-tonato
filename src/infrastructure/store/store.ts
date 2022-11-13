@@ -1,8 +1,8 @@
-import { ArticulesReducer } from "./../../feature/reducer/reducer";
+import { GamesReducer } from "../../feature/games/reducer/reducer";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const appStore = configureStore({
-    reducer: { articules: ArticulesReducer },
+    reducer: { games: GamesReducer },
 });
 
 export type rootStore = typeof appStore;
