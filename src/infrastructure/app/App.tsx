@@ -1,4 +1,10 @@
+import { Header } from "../components/header/header";
+
 function App() {
-    return <div className="app">React</div>;
+    return (
+        <>
+            <Header></Header>
+        </>
+    );
 }
 export default App;

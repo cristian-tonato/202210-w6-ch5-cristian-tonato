@@ -2,7 +2,7 @@ export type Articules={
     id: number;
     name: string;
     platform: string;
-    price: number;
+    price: string;
     ofert: boolean;
     imgUrl: string;
 
