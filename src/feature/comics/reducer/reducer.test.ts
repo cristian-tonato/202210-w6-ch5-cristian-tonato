@@ -1,32 +1,32 @@
-import { Games } from "../models/games";
-import { GamesReducer } from "./reducer";
+import { Comics } from "..//..//comics/models/comics";
+import { ComicsReducer } from "..//..//comics/reducer/reducer.comics";
 import { actionTypes } from "./action.types";
 
-describe("Given the function GamesReducer", () => {
-    describe("Given the function GamesReducer", () => {
-        const shopGames: Games = {
+describe("Given the function ComicsReducer", () => {
+    describe("Given the function ComicsReducer", () => {
+        const shopComics: Comics = {
             id: 1,
-            name: "God of War: Ragnarok",
-            platform: "PS5",
-            price: "79.99",
+            name: "Nightwing núm. 14",
+            edit: "DC",
+            price: "16",
             ofert: false,
-            imgUrl: "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png",
+            imgUrl: "https://static.fnac-static.com/multimedia/Images/ES/NR/83/bf/78/7913347/1540-1.jpg",
             detail: "",
         };
 
         let action: { type: string; payload: unknown };
-        let state: Array<Games>;
+        let state: Array<Comics>;
 
         describe("When the action is load", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.load,
-                    payload: [shopGames],
+                    payload: [shopComics],
                 };
                 state = [];
             });
             test("Then the returned state should be the action payload", () => {
-                const result = GamesReducer(state, action);
+                const result = ComicsReducer(state, action);
                 expect(result).toEqual(action.payload);
             });
         });
@@ -35,12 +35,12 @@ describe("Given the function GamesReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.add,
-                    payload: shopGames,
+                    payload: shopComics,
                 };
                 state = [];
             });
             test("Then the returned state should include the action payload", () => {
-                const result = GamesReducer(state, action);
+                const result = ComicsReducer(state, action);
                 expect(result).toContainEqual(action.payload);
             });
         });
@@ -49,12 +49,12 @@ describe("Given the function GamesReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.update,
-                    payload: { ...shopGames, title: "Update Games" },
+                    payload: { ...shopComics, title: "Update Comics" },
                 };
-                state = [shopGames];
+                state = [shopComics];
             });
             test("Then the returned state should include the action payload", () => {
-                const result = GamesReducer(state, action);
+                const result = ComicsReducer(state, action);
                 expect(result).toContainEqual(action.payload);
             });
         });
@@ -64,15 +64,15 @@ describe("Given the function GamesReducer", () => {
                 action = {
                     type: actionTypes.update,
                     payload: {
-                        ...shopGames,
+                        ...shopComics,
                         id: "2",
-                        title: "Update Games",
+                        title: "Update Comics",
                     },
                 };
-                state = [shopGames];
+                state = [shopComics];
             });
             test("Then the returned state should be the original state", () => {
-                const result = GamesReducer(state, action);
+                const result = ComicsReducer(state, action);
                 expect(result).toEqual(state);
             });
         });
@@ -81,12 +81,12 @@ describe("Given the function GamesReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.delete,
-                    payload: shopGames,
+                    payload: shopComics,
                 };
-                state = [shopGames];
+                state = [shopComics];
             });
             test("Then the returned state should not include the action payload", () => {
-                const result = GamesReducer(state, action);
+                const result = ComicsReducer(state, action);
                 expect(result).toEqual([]);
             });
         });
@@ -95,12 +95,12 @@ describe("Given the function GamesReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.delete,
-                    payload: { ...shopGames, id: "2" },
+                    payload: { ...shopComics, id: "2" },
                 };
-                state = [shopGames];
+                state = [shopComics];
             });
             test("Then the returned state should be the original state", () => {
-                const result = GamesReducer(state, action);
+                const result = ComicsReducer(state, action);
                 expect(result).toEqual(state);
             });
         });
