@@ -33,7 +33,7 @@ describe("Given component Shop games", () => {
         });
 
         test("Then if we use update() it should return a Promise of an Array of Games", async () => {
-            const mateMock: Games = {
+            const gamesMock: Games = {
                 id: 1,
                 name: "Batman",
                 detail: "",
@@ -44,11 +44,11 @@ describe("Given component Shop games", () => {
             };
             global.fetch = jest.fn().mockResolvedValue({
                 ok: true,
-                json: jest.fn().mockResolvedValue([mateMock]),
+                json: jest.fn().mockResolvedValue([gamesMock]),
             });
-            const result = await service.update({ title: "Mate Cactus" });
+            const result = await service.update({ title: "God" });
             expect(fetch).toHaveBeenCalled();
-            expect(result).toEqual([mateMock]);
+            expect(result).toEqual([gamesMock]);
         });
     });
 });
