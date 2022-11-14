@@ -31,24 +31,5 @@ describe("Given component Shop games", () => {
             expect(fetch).toHaveBeenCalled();
             expect(result).toEqual([]);
         });
-
-        test("Then if we use update() it should return a Promise of an Array of Games", async () => {
-            const gamesMock: Games = {
-                id: 1,
-                name: "Batman",
-                detail: "",
-                platform: "PS5",
-                price: "",
-                imgUrl: "",
-                ofert: false,
-            };
-            global.fetch = jest.fn().mockResolvedValue({
-                ok: true,
-                json: jest.fn().mockResolvedValue([gamesMock]),
-            });
-            const result = await service.update({ title: "God" });
-            expect(fetch).toHaveBeenCalled();
-            expect(result).toEqual([gamesMock]);
-        });
     });
 });
