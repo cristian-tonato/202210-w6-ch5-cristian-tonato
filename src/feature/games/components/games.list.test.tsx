@@ -11,7 +11,7 @@ describe("Given the GamesList component", () => {
                 {
                     id: 1,
                     name: "God of War: Ragnarok",
-                    platform: "",
+                    platform: "PS5",
                     price: "",
                     imgUrl: "",
                     ofert: false,
@@ -25,7 +25,7 @@ describe("Given the GamesList component", () => {
                     </Router>
                 </>
             );
-            const element = screen.getByText(/Godq/i);
+            const element = screen.getByText(/God/i);
             expect(element).toBeInTheDocument();
         });
     });

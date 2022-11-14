@@ -1,5 +1,4 @@
 import { ShopComics } from "..//..//comics/services/comics.api";
-import { Comics } from "./../..//comics/models/comics";
 
 describe("Given component Shop Comics", () => {
     describe("When we instantiate it", () => {
