@@ -1,5 +1,5 @@
-import { Comics } from "..//..//comics/models/comics";
-import { ComicsReducer } from "..//..//comics/reducer/reducer.comics";
+import { Comics } from "../models/comics";
+import { ComicsReducer } from "./reducer.comics";
 import { actionTypes } from "./action.types";
 
 describe("Given the function ComicsReducer", () => {
@@ -49,7 +49,7 @@ describe("Given the function ComicsReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.update,
-                    payload: { ...shopComics, title: "Update Comics" },
+                    payload: { ...shopComics, name: "Nightwing núm. 14" },
                 };
                 state = [shopComics];
             });
@@ -65,8 +65,8 @@ describe("Given the function ComicsReducer", () => {
                     type: actionTypes.update,
                     payload: {
                         ...shopComics,
-                        id: "2",
-                        title: "Update Comics",
+                        id: "1",
+                        name: "Nightwing núm. 14",
                     },
                 };
                 state = [shopComics];
@@ -95,7 +95,7 @@ describe("Given the function ComicsReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.delete,
-                    payload: { ...shopComics, id: "2" },
+                    payload: { ...shopComics, id: "1" },
                 };
                 state = [shopComics];
             });
