@@ -1,7 +1,7 @@
 import { Menu } from "../menu/menu";
 import styles from "./header.module.css";
 export function Header() {
-    const title = "COMICSON";
+    const title = "COMIC´S-GAME";
     return (
         <>
             <header className={styles.header}>

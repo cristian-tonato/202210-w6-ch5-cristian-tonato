@@ -7,12 +7,14 @@
 }
 
 .menu__list {
-    color: black;
+    color: rgb(255, 255, 255);
     list-style: none;
     margin: 0.5rem;
+    font-size: 20px;
 }
 
 .menu__nav {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    transition:all .5s ease-in-out
 }
