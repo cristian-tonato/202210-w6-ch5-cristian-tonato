@@ -49,7 +49,7 @@ describe("Given the function GamesReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.update,
-                    payload: { ...shopGames, title: "Update Games" },
+                    payload: { ...shopGames, name: "God of War: Ragnarok" },
                 };
                 state = [shopGames];
             });
@@ -65,8 +65,8 @@ describe("Given the function GamesReducer", () => {
                     type: actionTypes.update,
                     payload: {
                         ...shopGames,
-                        id: "2",
-                        title: "Update Games",
+                        id: "1",
+                        tname: "God of War: Ragnarok",
                     },
                 };
                 state = [shopGames];
@@ -95,7 +95,7 @@ describe("Given the function GamesReducer", () => {
             beforeEach(() => {
                 action = {
                     type: actionTypes.delete,
-                    payload: { ...shopGames, id: "2" },
+                    payload: { ...shopGames, id: "1" },
                 };
                 state = [shopGames];
             });
