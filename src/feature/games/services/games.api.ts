@@ -1,6 +1,9 @@
 import { Games } from "..//models/games";
 
 export class ShopGames {
+    update(arg0: { title: string; }) {
+        throw new Error('Method not implemented.');
+    }
     url: string;
     constructor(url = "https://comicson.onrender.com/Games") {
         this.url = url;
